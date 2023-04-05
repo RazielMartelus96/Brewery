@@ -14,7 +14,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * A Recipe for the Base Potion coming out of the Cauldron.
+ * A Recipe for the Base Potion coming out of the Cauldron
  */
 public class BCauldronRecipe {
 	public static List<BCauldronRecipe> recipes = new ArrayList<>();
