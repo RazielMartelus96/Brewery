@@ -24,11 +24,7 @@
 
 package com.dre.brewery;
 
-import com.dre.brewery.filedata.BConfig;
-import com.dre.brewery.filedata.BData;
-import com.dre.brewery.filedata.DataSave;
-import com.dre.brewery.filedata.LanguageReader;
-import com.dre.brewery.filedata.UpdateChecker;
+import com.dre.brewery.filedata.*;
 import com.dre.brewery.integration.ChestShopListener;
 import com.dre.brewery.integration.IntegrationListener;
 import com.dre.brewery.integration.ShopKeepersListener;
@@ -36,13 +32,15 @@ import com.dre.brewery.integration.barrel.BlocklockerBarrel;
 import com.dre.brewery.integration.barrel.LogBlockBarrel;
 import com.dre.brewery.listeners.*;
 import com.dre.brewery.recipe.*;
-import com.dre.brewery.utility.BUtil;
 import com.dre.brewery.utility.LegacyUtil;
-import org.apache.commons.lang.math.NumberUtils;
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.*;
-import org.bukkit.Bukkit;
 import net.md_5.bungee.api.ChatColor;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.bstats.bukkit.Metrics;
+import org.bstats.charts.AdvancedPie;
+import org.bstats.charts.DrilldownPie;
+import org.bstats.charts.SimplePie;
+import org.bstats.charts.SingleLineChart;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
@@ -50,13 +48,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.awt.*;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Function;
-
+import java.util.logging.Level;
 
 
 public class P extends JavaPlugin {
@@ -514,6 +511,7 @@ public class P extends JavaPlugin {
 	}
 
 	public String color(String msg) {
+		Bukkit.getLogger().log(Level.WARNING,"Color is being parsed: " + msg);
 		return ColorManager.getInstance().getColor(msg);
 	}
 
