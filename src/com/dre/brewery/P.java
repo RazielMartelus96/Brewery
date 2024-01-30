@@ -50,6 +50,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -513,7 +514,7 @@ public class P extends JavaPlugin {
 	}
 
 	public String color(String msg) {
-		return BUtil.color(msg);
+		return ColorManager.getInstance().getColor(msg);
 	}
 
 
